@@ -1,0 +1,19 @@
+# Test accounts
+
+## Account 1
+
+- Private key: f37a3b807ceadf05c52a1a83b36b98913e6b7c61d0da1f3b7d30c458ea782308
+- Public key: 0250acb1d24b74d83199e3c4f0d43896f2418fbd7b64340d85a24896a8b93ab07a
+- Eth Address: 0xb5a6ce460803e179545a25befe8d2c977aeb7e66
+
+## Account 2
+
+- Private key: 52278765384b1b51460b31210a4151e35ed9d5b8141628e369661ae88a517e2a
+- Public key: 039ce157e8aa3ade5cf5c698608bc1fdb4818e289312b04a3476af0b5f7c0a54f6
+- Eth Address: 0xe2090d63852cf572a91242f9be134cfc2ed81cdf
+
+## Account 3
+
+- Private key: 1844507cbad56e23db7b9ff36080648e9977eb28ad42ffee6e3f544d91473856
+- Public key: 03d33a1b562712da2b148bc3cfa60041db3eafe7b00ae0ae7a81be508d56297264
+- Eth Address: 0x3f9aa534329fa1cf5530d95e480bfe00ffec5e2c
