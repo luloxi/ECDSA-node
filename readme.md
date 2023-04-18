@@ -1,4 +1,4 @@
-# ECDSA Node
+# FoxyMask (ECDSA Node)
 
 Project implementing ECDSA on a client and a server to transact value between different addresses with ease and security.
 
