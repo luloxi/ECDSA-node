@@ -28,7 +28,7 @@ function Wallet({
 
   return (
     <div className="container wallet">
-      <h1>📤 Your Wallet 💰</h1>
+      <h1>📤 FoxyMask 🦊</h1>
       <label>
         Sender wallet:{" "}
         {FoxyMask.getAddress(user) ? `${FoxyMask.getAddress(user)}` : null}

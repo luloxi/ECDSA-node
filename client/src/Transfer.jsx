@@ -31,6 +31,12 @@ function Transfer({ user, setBalance, sendAmount }) {
     } catch (ex) {
       alert(ex);
     }
+
+    const address = FoxyMask.getAddress(recipient);
+    const {
+      data: { balance },
+    } = await server.get(`balance/${address}`);
+    setRecipientBalance(balance);
   }
 
   // Function for users selector

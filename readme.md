@@ -1,16 +1,23 @@
 # ECDSA Node
 
-Project implementing ECDSA on a client and a server to securely transact value between different addresses.
-It guarantees security by signing messages behind scenes.
+Project implementing ECDSA on a client and a server to transact value between different addresses with ease and security.
 
-- It uses `/src/FoxyMask.js` on the client side for secure storage of private keys, and sign and getter functions
-- It uses `/scripts/hashi.js` on the server side for converting from signature to Ethereum address
+**Why is it secure?:** Because it guarantees security by only allowing transactions that have been signed by the funds owner.
 
-## Alchemy University words
+**Usage made easy by:**
 
-Since there is just a single server on the back-end handling transfers, this is clearly very centralized. We won't worry about distributed consensus for this project.
+- Allows to select between wallets with easy names for sender and recipient
+- Updates balances for both sender and recipient instantly
+- Signing and complicated stuff happens behind scenes
 
-However, something that we would like to incoporate is Public Key Cryptography. By using Elliptic Curve Digital Signatures we can make it so the server only allows transfers that have been signed for by the person who owns the associated address.
+## Filesystem
+
+Structure from [ecdsa-node](https://github.com/alchemyplatform/ecdsa-node) repo from Alchemy left untouched.
+
+**New additions are:**
+
+- `/client/src/FoxyMask.js` -wink to MetaMask- works as a wallet by storing private keys, sign function and getter functions
+- `/server/scripts/hashi.js` is a library with functions for converting from signature to Ethereum address
 
 ### Client
 
