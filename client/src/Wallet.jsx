@@ -9,17 +9,12 @@ function Wallet({
   sendAmount,
   setSendAmount,
 }) {
-  // Necessary?
-  let address = "";
-
-  const setValue = (setter) => (evt) => setter(evt.target.value);
-
   async function onSelectUser(evt) {
     const selectedUser = evt.target.value;
     setUser(selectedUser);
 
     if (selectedUser) {
-      address = FoxyMask.getAddress(selectedUser);
+      const address = FoxyMask.getAddress(selectedUser);
       const {
         data: { balance },
       } = await server.get(`balance/${address}`);
@@ -29,6 +24,8 @@ function Wallet({
     }
   }
 
+  const setValue = (setter) => (evt) => setter(evt.target.value);
+
   return (
     <div className="container wallet">
       <h1>📤 Your Wallet 💰</h1>
@@ -37,7 +34,7 @@ function Wallet({
         {FoxyMask.getAddress(user) ? `${FoxyMask.getAddress(user)}` : null}
         <select className="selector" onChange={onSelectUser} value={user}>
           <option value="">- Select a wallet -</option>
-          {FoxyMask.USERS.map((u, i) => (
+          {FoxyMask.Foxes.map((u, i) => (
             <option key={i} value={u}>
               {u}
             </option>

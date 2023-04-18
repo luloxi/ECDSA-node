@@ -1,26 +1,17 @@
 const express = require("express");
-const crypto = require("./scripts/crypto");
-const { toHex } = require("ethereum-cryptography/utils");
 const app = express();
 const cors = require("cors");
 const port = 3042;
+
+const hashi = require("./scripts/hashi");
 
 app.use(cors());
 app.use(express.json());
 
 const balances = {
-  "0xb5a6ce460803e179545a25befe8d2c977aeb7e66": 100,
-  "0xe2090d63852cf572a91242f9be134cfc2ed81cdf": 50,
-  "0x3f9aa534329fa1cf5530d95e480bfe00ffec5e2c": 75,
-};
-
-const publicKeys = {
-  "0xb5a6ce460803e179545a25befe8d2c977aeb7e66":
-    "0250acb1d24b74d83199e3c4f0d43896f2418fbd7b64340d85a24896a8b93ab07a",
-  "0xe2090d63852cf572a91242f9be134cfc2ed81cdf":
-    "039ce157e8aa3ade5cf5c698608bc1fdb4818e289312b04a3476af0b5f7c0a54f6",
-  "0x3f9aa534329fa1cf5530d95e480bfe00ffec5e2c":
-    "03d33a1b562712da2b148bc3cfa60041db3eafe7b00ae0ae7a81be508d56297264",
+  "0x0f6cc022a606523ec2a06fc06bc38ffce74ab7d1": 100,
+  "0xdeda08a56dc44afee1b2e8e9191e337edb2d82ca": 50,
+  "0x4523e349d9f855cf15adee8e349bafa16953a899": 75,
 };
 
 app.get("/balance/:address", (req, res) => {
@@ -30,21 +21,18 @@ app.get("/balance/:address", (req, res) => {
 });
 
 app.post("/send", (req, res) => {
-  // Get a signature from the client-side application
   const { message, signature } = req.body;
   const { amount, recipient } = message;
+  console.log("recipient:", recipient);
 
-  // Recover the public address from the signature and convert it to ethereum address
-  const publicKey = crypto.signatureToPublicKey(message, signature);
-  const sender = crypto.publicKeyToAddress(publicKey);
-  console.log(sender);
-  console.log(publicKey);
+  const publicKey = hashi.signatureToPublicKey(message, signature);
+  const sender = hashi.publicKeyToAddress(publicKey); // To ETH address
+  console.log("sender:", sender);
 
   setInitialBalance(sender);
   setInitialBalance(recipient);
 
   if (balances[sender] < amount) {
-    console.log(balances[sender]);
     res.status(400).send({ message: "Not enough funds!" });
   } else {
     balances[sender] -= amount;

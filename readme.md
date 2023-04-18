@@ -1,35 +1,14 @@
 # ECDSA Node
 
-## Trying to figure out why signatures not working
+Project implementing ECDSA on a client and a server to securely transact value between different addresses.
+It guarantees security by signing messages behind scenes.
 
-### /server/scripts/crypto.js
+- It uses `/src/FoxyMask.js` on the client side for secure storage of private keys, and sign and getter functions
+- It uses `/scripts/hashi.js` on the server side for converting from signature to Ethereum address
 
-- Not recovering the correct key with signatureToPublicKey from crypto.js
+## Alchemy University words
 
-### /server/index.js
-
-- Check that it's getting the right address
-  `const sender = crypto.pubKeyToAddress(pubKey);`
-
-- Check if setInitialBalance is added
-  `function setInitialBalance(address)`
-
-- Make this if/else inverse
-  `if (balances.get(sender) < amount)`
-
-### /client/src/Transfer.jsx
-
-- Check if the function is here and is getting all the parameters
-  `async function transfer(evt)`
-
-### /client/src/FoxyMask.jsx
-
-- Check if the sign function is working properly
-  `const sign = async (username, message) =>`
-
-## About
-
-This project is an example of using a client and server to facilitate transfers between different addresses. Since there is just a single server on the back-end handling transfers, this is clearly very centralized. We won't worry about distributed consensus for this project.
+Since there is just a single server on the back-end handling transfers, this is clearly very centralized. We won't worry about distributed consensus for this project.
 
 However, something that we would like to incoporate is Public Key Cryptography. By using Elliptic Curve Digital Signatures we can make it so the server only allows transfers that have been signed for by the person who owns the associated address.
 

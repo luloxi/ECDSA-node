@@ -12,7 +12,7 @@ function Transfer({ user, setBalance, sendAmount }) {
 
     const message = {
       amount: parseInt(sendAmount),
-      recipient,
+      recipient: FoxyMask.getAddress(recipient),
     };
 
     // Signature is composed of the user (private key?) and the message object
@@ -51,7 +51,7 @@ function Transfer({ user, setBalance, sendAmount }) {
 
   return (
     <form className="container transfer" onSubmit={transfer}>
-      <h1>📥 Send Transaction 💸</h1>
+      <h1>📥 Destination wallet 💸</h1>
 
       <label>
         Recipient wallet:{" "}
@@ -60,7 +60,7 @@ function Transfer({ user, setBalance, sendAmount }) {
           : null}
         <select className="selector" onChange={onSelectUser} value={recipient}>
           <option value="">- Select a wallet -</option>
-          {FoxyMask.USERS.map((u, i) => (
+          {FoxyMask.Foxes.map((u, i) => (
             <option key={i} value={u}>
               {u}
             </option>
