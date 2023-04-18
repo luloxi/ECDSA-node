@@ -23,17 +23,17 @@ app.get("/balance/:address", (req, res) => {
 app.post("/send", (req, res) => {
   const { message, signature } = req.body;
   const { amount, recipient } = message;
-  console.log("recipient:", recipient);
 
   const publicKey = hashi.signatureToPublicKey(message, signature);
   const sender = hashi.publicKeyToAddress(publicKey); // To ETH address
-  console.log("sender:", sender);
 
   setInitialBalance(sender);
   setInitialBalance(recipient);
 
   if (balances[sender] < amount) {
     res.status(400).send({ message: "Not enough funds!" });
+  } else if (amount < 0) {
+    res.status(400).send({ message: "You can't steal with this trick!" });
   } else {
     balances[sender] -= amount;
     balances[recipient] += amount;

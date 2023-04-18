@@ -9,7 +9,7 @@ import { hexToBytes, toHex } from "ethereum-cryptography/utils";
  * Keys are stored in hexadecimal format.
  */
 
-// Accounts with keys in hex format
+// Accounts with usernames and public/private key peirs
 const FoxyFamily = new Map([
   [
     "Alakazam",
@@ -40,9 +40,10 @@ const FoxyFamily = new Map([
   ],
 ]);
 
-// user names derived from the list of accounts
+// Usernames derived from the list of accounts
 const Foxes = Array.from(FoxyFamily.keys());
 
+// Standard hashMessage function
 const hashMessage = (message) => keccak256(Uint8Array.from(message));
 
 // Returns the private key as a Uint8Array.

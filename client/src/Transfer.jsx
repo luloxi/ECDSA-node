@@ -32,6 +32,7 @@ function Transfer({ user, setBalance, sendAmount }) {
       alert(ex);
     }
 
+    // Update recipient address after successfully transfering
     const address = FoxyMask.getAddress(recipient);
     const {
       data: { balance },

@@ -9,6 +9,7 @@ Project implementing ECDSA on a client and a server to transact value between di
 - Allowing to select between wallets with easy names for sender and recipient
 - Updating balances for both sender and recipient after a transfer
 - Set up and go, signing and complex stuff happens behind scenes
+- Addresses are shown and processed in Ethereum address formatting
 
 ## Filesystem
 
