@@ -2,7 +2,7 @@
 
 Project implementing ECDSA on a client and a server to transact value between different addresses with ease and security.
 
-**Why is it secure?:** Because it guarantees security by only allowing transactions that have been signed by the funds owner.
+**Why is it secure?:** Because it only allows transactions that have been signed by the funds owner.
 
 **Usage made easy by:**
 
