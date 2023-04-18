@@ -20,9 +20,13 @@ Structure from [ecdsa-node](https://github.com/alchemyplatform/ecdsa-node) repo 
 - `/client/src/FoxyMask.js` -wink to MetaMask- works as a wallet by storing private keys, sign function and getter functions
 - `/server/scripts/hashi.js` is a library with functions for converting from signature to Ethereum address
 
+## How to use
+
+You must run the client and the server for the project to work as intended.
+
 ### Client
 
-The client folder contains a [react app](https://reactjs.org/) using [vite](https://vitejs.dev/). To get started, follow these steps:
+To run the client, follow these steps:
 
 1. Open up a terminal in the `/client` folder
 2. Run `npm install` to install all the depedencies
@@ -31,7 +35,7 @@ The client folder contains a [react app](https://reactjs.org/) using [vite](http
 
 ### Server
 
-The server folder contains a node.js server using [express](https://expressjs.com/). To run the server, follow these steps:
+To run the server, follow these steps:
 
 1. Open a terminal within the `/server` folder
 2. Run `npm install` to install all the depedencies
