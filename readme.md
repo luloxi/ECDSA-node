@@ -6,9 +6,9 @@ Project implementing ECDSA on a client and a server to transact value between di
 
 **Usage made easy by:**
 
-- Allows to select between wallets with easy names for sender and recipient
-- Updates balances for both sender and recipient instantly
-- Signing and complicated stuff happens behind scenes
+- Allowing to select between wallets with easy names for sender and recipient
+- Updating balances for both sender and recipient after a transfer
+- Set up and go, signing and complex stuff happens behind scenes
 
 ## Filesystem
 
